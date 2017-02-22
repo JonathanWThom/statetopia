@@ -33,6 +33,15 @@ class NationsController < ApplicationController
     end
   end
 
+  def edit
+    @nation = Nation.find(params[:id])
+    @response = Response.find(params[:response_id])
+    @nation.edit_resources(@response)
+    @nation.save
+      ##run custom method and do ajax
+    redirect_to nation_path(@nation)
+  end
+
 private
   def nation_params
     params.require(:nation).permit(:name, :government, :economy, :geography)

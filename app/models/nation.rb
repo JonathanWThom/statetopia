@@ -7,6 +7,13 @@ class Nation < ActiveRecord::Base
 
   before_create :set_attributes
 
+  def edit_resources(response)
+    self.stability += response.stability_effect
+    self.capital += response.capital_effect
+    self.resources += response.resources_effect
+    self.population += response.population_effect
+  end
+
   def set_attributes
     #stability
     if self.government == 'Dictatorship'
