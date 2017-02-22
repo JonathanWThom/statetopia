@@ -1,0 +1,9 @@
+<h1>Statetopia</h1>
+
+<h2>The Year is 2019 and the USA Republic has collapsed. The former country is now a series of fractured nation-states. You are running one. Play the game and try to survive the Trumpocalpyse</h2>
+
+<% if current_user %>
+  <%= link_to "Start Your Nation", new_nation_path %>
+<% else %>
+  <%= link_to "Sign Up to Play", new_user_registration_path %>
+<% end %>
