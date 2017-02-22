@@ -4,6 +4,12 @@
 
 <% if current_user %>
   <%= link_to "Start Your Nation", new_nation_path %>
+  <% if current_user.nations.any? %>
+    <h3>Continue Playing</h3>
+    <% current_user.nations.each do |nation| %>
+      <%= link_to nation.name, nation_path(nation) %>
+    <% end %>
+  <% end %>
 <% else %>
   <%= link_to "Sign Up to Play", new_user_registration_path %>
 <% end %>

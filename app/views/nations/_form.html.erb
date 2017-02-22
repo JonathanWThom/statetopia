@@ -1,0 +1,8 @@
+<%= simple_form_for @nation do |f| %>
+  <%= f.label 'Nation Name' %>
+  <%= f.text_field :name %>
+  <%= f.input :government, collection: ["Dictatorship", "Democracy", "Aristocracy"] %>
+  <%= f.input :economy,  collection: ["Captialist", "Socialist", "Mixed Economy"] %>
+  <%= f.input :geography, collection: ["Desert", "Forest", "Plains", "Mountains"] %>
+  <%= f.submit %>
+<% end %>
