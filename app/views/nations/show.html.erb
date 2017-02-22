@@ -1,10 +1,8 @@
-<h1>Nation Created</h1>
+<h1><%= @nation.name %></h1>
+<h3><%= @nation.government %></h3>
+<h3><%= @nation.economy %></h3>
+<h3><%= @nation.geography %></h3>
 
-<h3><%= @nation.name %></h3>
-<p><%= @nation.government %></p>
-<p><%= @nation.economy %></p>
-<p><%= @nation.geography %></p>
-<p><%= @nation.population %></p>
-<p><%= @nation.resources %></p>
-<p><%= @nation.stability %></p>
-<p><%= @nation.capital %></p>
+<div class="stats">
+  <%= render "stats" %>
+</div>
