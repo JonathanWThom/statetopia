@@ -18,10 +18,18 @@ class NationsController < ApplicationController
 
   def show
     @nation = Nation.find(params[:id])
+    @event = Event.order("RANDOM()").first
     if current_user.nations.include?(@nation)
       render :show
     else
       redirect_to root_path
+    end
+
+    if params[:event] == true
+      respond_to do |format|
+        format.html { redirect_to nation_path(@nation) }
+        format.js
+      end
     end
   end
 
