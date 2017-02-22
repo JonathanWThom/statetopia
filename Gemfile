@@ -53,6 +53,8 @@ group :development, :test do
   gem "factory_girl_rails", "~> 4.0"
   gem 'simplecov', :require => false
   gem 'dotenv-rails'
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
 
 group :development do
