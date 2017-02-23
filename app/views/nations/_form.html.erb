@@ -4,5 +4,5 @@
   <%= f.input :government, collection: ["Dictatorship", "Democracy", "Aristocracy"] %>
   <%= f.input :economy,  collection: ["Captialist", "Socialist", "Mixed Economy"] %>
   <%= f.input :geography, collection: ["Desert", "Forest", "Plains", "Mountains"] %>
-  <%= f.submit %>
+  <%= f.submit 'Create Nation', :class => 'btn btn-success' %>
 <% end %>

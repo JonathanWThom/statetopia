@@ -67,7 +67,5 @@ describe Nation do
       expect(nation.resources).to(eq(0))
       expect(nation.population).to(eq(0))
     end
-
-
   end
 end

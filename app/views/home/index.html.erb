@@ -3,13 +3,9 @@
 <h2>The Year is 2019 and the USA Republic has collapsed. The former country is now a series of fractured nation-states. You are running one. Play the game and try to survive the Trumpocalpyse</h2>
 
 <% if current_user %>
-  <%= link_to "Start Your Nation", new_nation_path %>
-  <% if current_user.nations.any? %>
-    <h3>Continue Playing</h3>
-    <% current_user.nations.each do |nation| %>
-      <%= link_to nation.name, nation_path(nation) %>
-    <% end %>
-  <% end %>
+  <div id="nations">
+    <%= render 'nationlist' %>
+  </div>
 <% else %>
   <%= link_to "Sign Up to Play", new_user_registration_path %>
 <% end %>
