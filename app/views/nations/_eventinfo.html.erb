@@ -2,7 +2,7 @@
 
 <h3>Choose a Course of Action</h3>
 <div class="row">
-  <% @event.responses.each do |response| %>
+  <% @event.responses.order("RANDOM()").each do |response| %>
     <div class="col-sm-4">
       <p><%= response.description %></p>
       <%= link_to 'Choose', edit_response_nation_path(response, @nation), remote: true, class: 'btn btn-default' %>
