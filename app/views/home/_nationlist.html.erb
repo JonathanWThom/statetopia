@@ -1,8 +1,12 @@
 <%= link_to "Start Your Nation", new_nation_path, class: 'btn btn-default' %>
-<% if current_user.nations.any? %>
+<br>
+<br>
+<div class="continue">
+  <% if current_user.nations.any? %>
   <h3>Continue Playing</h3>
   <% @nations.each do |nation| %>
-    <p><%= link_to nation.name, nation_path(nation) %></p>
+  <p><%= link_to nation.name, nation_path(nation) %></p>
   <% end %>
-<% end %>
-<%= will_paginate @nations %>
+  <% end %>
+  <%= will_paginate @nations %>
+</div>
