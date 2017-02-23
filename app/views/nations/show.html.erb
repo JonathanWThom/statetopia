@@ -3,14 +3,19 @@
 <h3><%= @nation.economy %></h3>
 <h3><%= @nation.geography %></h3>
 
-
 <div class="stats">
   <%= render "stats" %>
 </div>
 
-<div id="event">
-  <%= link_to "Next Event", :event => true, :remote => true %>
+<div class="winstate">
+  <%= render 'winstate' %>
 </div>
+
+<% if !@game_status %>
+  <div id="event">
+    <%= link_to "Next Event", :event => true, :remote => true %>
+  </div>
+<% end %>
 
 <div class="event">
 

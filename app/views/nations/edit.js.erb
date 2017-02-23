@@ -1,8 +1,7 @@
-<% if @game_status == 'win' %>
-  alert('win');
-<% elsif @game_status == 'lose' %>
-  alert('you lose');
-<% end %>
 $('.stats').html('<%= j render "stats" %>');
 $('.event').html('');
 $('#event').show();
+<% if @game_status %>
+  $('.winstate').html('<%= j render "winstate" %>')
+  $('#event').hide();
+<% end %>

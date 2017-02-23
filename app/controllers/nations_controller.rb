@@ -8,7 +8,6 @@ class NationsController < ApplicationController
     @user = current_user
     @nation = @user.nations.new(nation_params)
     if @nation.save
-      flash[:notice] = "Nation Created"
       redirect_to nation_path(@nation)
     else
       flash[:alert] = "Nation Not Created, Clean up your country"
@@ -19,7 +18,7 @@ class NationsController < ApplicationController
   def show
     @nation = Nation.find(params[:id])
     @event = Event.order("RANDOM()").first
-    # @game_status = @nation.game_status
+    @game_status = @nation.game_status
     if current_user.nations.include?(@nation)
       render :show
     else
