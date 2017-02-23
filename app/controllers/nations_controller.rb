@@ -37,6 +37,7 @@ class NationsController < ApplicationController
     @nation = Nation.find(params[:id])
     @response = Response.find(params[:response_id])
     @nation.edit_resources(@response)
+    ## this is saving but not actually using javascript
     if @nation.save
       respond_to do |format|
         format.html {redirect_to nation_path(@nation)}
