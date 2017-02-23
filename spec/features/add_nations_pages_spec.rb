@@ -16,4 +16,13 @@ describe "how user creates nation" do
     click_on "Create Nation"
     expect(page).to have_content("Cascadia")
   end
+
+  it "show errors for creating nation when fields empty" do
+    user = create(:user)
+    login_as(user)
+    visit new_nation_path
+    click_on "Create Nation"
+    expect(page).to have_content('Clean up')
+  end
+
 end

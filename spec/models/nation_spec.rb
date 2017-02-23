@@ -7,4 +7,23 @@ describe Nation do
   it { should validate_presence_of :government }
   it { should validate_presence_of :economy }
   it { should validate_presence_of :geography }
+
+  describe '#set_attributes' do
+    it 'adds nation attributes based on user input' do
+      user = create(:user)
+      nation = Nation.new(government: 'Aristocracy', economy: 'Capitalist', geography: 'Forest', name: 'The Great Nation of Nationland', user_id: user.id)
+      nation.save
+      expect(nation.capital).to(eq(1000))
+      expect(nation.stability).to(eq(0.5))
+      expect(nation.population).to(eq(30000))
+      expect(nation.resources).to(eq(1000))
+    end
+
+    it 'adds nation attributes based on user input' do
+      user = create(:user)
+      nation = Nation.new(government: 'Aristocracy', economy: 'Capitalist', geography: 'Desert', name: 'The Great Nation of Nationland', user_id: user.id)
+      nation.save
+      expect(nation.population).to(eq(10000))
+    end
+  end
 end

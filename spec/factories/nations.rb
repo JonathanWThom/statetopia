@@ -4,5 +4,6 @@ FactoryGirl.define do
     government "Democracy"
     economy "Socialist"
     geography "Mountains"
+    user
   end
 end
