@@ -15,3 +15,43 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+.background-generic {
+  background-image: url("map.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  margin-top: -20px;
+}
+
+.Forest {
+  background-image: url("forest.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  margin-top: -20px;
+}
+
+.Plains {
+  background-image: url("plains.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  margin-top: -20px;
+}
+
+.Mountains {
+  background-image: url("mountains.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  margin-top: -20px;
+}
+
+.Desert {
+  background-image: url("desert.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  margin-top: -20px;
+}
