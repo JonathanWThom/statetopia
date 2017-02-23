@@ -19,6 +19,7 @@ class NationsController < ApplicationController
   def show
     @nation = Nation.find(params[:id])
     @event = Event.order("RANDOM()").first
+    # @game_status = @nation.game_status
     if current_user.nations.include?(@nation)
       render :show
     else
@@ -37,7 +38,7 @@ class NationsController < ApplicationController
     @nation = Nation.find(params[:id])
     @response = Response.find(params[:response_id])
     @nation.edit_resources(@response)
-    ## this is saving but not actually using javascript
+    @game_status = @nation.game_status
     if @nation.save
       respond_to do |format|
         format.html {redirect_to nation_path(@nation)}
