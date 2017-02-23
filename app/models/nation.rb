@@ -12,6 +12,7 @@ class Nation < ActiveRecord::Base
     self.capital += response.capital_effect
     self.resources += response.resources_effect
     self.population += response.population_effect
+    self.year += 1
   end
 
   def set_attributes
