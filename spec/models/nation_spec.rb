@@ -49,5 +49,25 @@ describe Nation do
       nation.save
       expect(nation.population).to(eq(999500))
     end
+
+    it 'will not allow stability to go over 1' do
+      nation = create(:nation)
+      response = create(:response, stability_effect: 1)
+      nation.edit_resources(response)
+      nation.save
+      expect(nation.stability).to(eq(1))
+    end
+
+    it 'will default negative attribute values to zero' do
+      nation = create(:nation)
+      response = create(:response, stability_effect: -1, population_effect: -10000000, resources_effect: -1000000)
+      nation.edit_resources(response)
+      nation.save
+      expect(nation.stability).to(eq(0))
+      expect(nation.resources).to(eq(0))
+      expect(nation.population).to(eq(0))
+    end
+
+
   end
 end
