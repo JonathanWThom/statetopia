@@ -1,6 +1,5 @@
 class CreateResponsesEvents < ActiveRecord::Migration[5.0]
   def change
-    drop_table :nations_tables
     create_table :responses do |t|
       t.integer :event_id
       t.integer :nation_id

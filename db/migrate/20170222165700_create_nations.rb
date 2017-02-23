@@ -10,6 +10,5 @@ class CreateNations < ActiveRecord::Migration[5.0]
       t.integer :population
       t.decimal :stability
     end
-    drop_table :nations_tables
   end
 end
