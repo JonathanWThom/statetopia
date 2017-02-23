@@ -25,4 +25,12 @@ describe "how user creates nation" do
     expect(page).to have_content('Clean up')
   end
 
+  it 'will redirect users who don\'t own that nation' do
+    nation = create(:nation)
+    user = create(:user, :email => 'email@email.com')
+    login_as(user)
+    visit nation_path(nation)
+    expect(page).to have_content('The Year is 2019')
+  end
+
 end
