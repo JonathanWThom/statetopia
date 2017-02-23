@@ -7,6 +7,14 @@ class Nation < ActiveRecord::Base
 
   before_create :set_attributes
 
+  def game_status
+    if self.stability == 0 or self.capital == 0 or self.resources == 0 or self.population == 0
+      return 'lose'
+    elsif self.year == 2030
+      return 'win'
+    end
+  end
+
   def edit_resources(response)
     self.stability += response.stability_effect
     self.capital += response.capital_effect

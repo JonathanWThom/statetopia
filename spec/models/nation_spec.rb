@@ -26,4 +26,28 @@ describe Nation do
       expect(nation.population).to(eq(10000))
     end
   end
+
+  describe '#game_status' do
+    it 'will say if you lost the game' do
+      nation = create(:nation)
+      nation.update(capital: 0)
+      expect(nation.game_status).to(eq('lose'))
+    end
+
+    it 'will say if you won the game' do
+      nation = create(:nation)
+      nation.update(year: 2030)
+      expect(nation.game_status).to(eq('win'))
+    end
+  end
+
+  describe '#edit_resources' do
+    it 'will change resources based on a chosen response' do
+      nation = create(:nation)
+      response = create(:response, population_effect: -500)
+      nation.edit_resources(response)
+      nation.save
+      expect(nation.population).to(eq(4500))
+    end
+  end
 end
