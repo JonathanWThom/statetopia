@@ -1,3 +1,5 @@
+Nation.create(name: "test", economy: "Capitalist", geography: "Plains", government: "Democracy")
+
 event1 = Event.create({name: "Your biggest city is hit by Hurricane Donald! Public emergency declared. City requesting help from Nation."})
 event1.responses.create(description: "Declare a state of emergency. Divert all available resources to helping the affected. Support telethon drive hosted by Taylor Swift. Experts say this course of action will increase stability.", capital_effect: 50, population_effect: 250000, stability_effect: 0.1, resources_effect: 1000, nation_id: 1)
 event1.responses.create(description: "Call the Red Cross. Let them handle it, they're the experts. Support telethon drive hosted by Kanye West. Experts say this course of action will result in no deaths.", capital_effect: -10, population_effect: 0, stability_effect: 0, resources_effect: -250, nation_id: 1)
