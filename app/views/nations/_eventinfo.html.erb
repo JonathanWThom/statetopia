@@ -1,8 +1,11 @@
-<p><%= @event.name %></p>
+<h3><%= @event.name %></h3>
 
-<% @event.responses.each do |response| %>
-  <p>Option: <%= response.description %></p>
-  <p>Spend Capital: <%= response.capital_effect %></p>
-  <p>Resource Use: <%= response.resources_effect %></p>
-  <%= link_to 'Choose', edit_response_nation_path(response, @nation), remote: true %>
-<% end %>
+<h3>Choose a Course of Action</h3>
+<div class="row">
+  <% @event.responses.each do |response| %>
+    <div class="col-sm-4">
+      <p><%= response.description %></p>
+      <%= link_to 'Choose', edit_response_nation_path(response, @nation), remote: true, class: 'btn btn-default' %>
+    </div>
+  <% end %>
+</div>
