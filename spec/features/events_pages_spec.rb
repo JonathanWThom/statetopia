@@ -7,7 +7,7 @@ describe "user choosing an event that happens on the nation" do
     nation = create(:nation, :user_id => user.id)
     login_as(user)
     visit nation_path(nation)
-    click_on "Next Event"
+    click_button "Next Event"
     expect(page).to have_content("Hurricane")
   end
 
@@ -18,7 +18,7 @@ describe "user choosing an event that happens on the nation" do
     response = create(:response, :event_id => event.id)
     login_as(user)
     visit nation_path(nation)
-    click_on "Next Event"
+    click_button "Next Event"
     click_on "Choose"
     expect(page).to_not have_content("Hurricane")
   end

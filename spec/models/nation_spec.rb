@@ -13,17 +13,17 @@ describe Nation do
       user = create(:user)
       nation = Nation.new(government: 'Aristocracy', economy: 'Capitalist', geography: 'Forest', name: 'The Great Nation of Nationland', user_id: user.id)
       nation.save
-      expect(nation.capital).to(eq(1000))
-      expect(nation.stability).to(eq(0.5))
-      expect(nation.population).to(eq(30000))
-      expect(nation.resources).to(eq(1000))
+      expect(nation.capital).to(eq(200))
+      expect(nation.stability).to(eq(0.75))
+      expect(nation.population).to(eq(3000000))
+      expect(nation.resources).to(eq(5000))
     end
 
     it 'adds nation attributes based on user input' do
       user = create(:user)
       nation = Nation.new(government: 'Aristocracy', economy: 'Capitalist', geography: 'Desert', name: 'The Great Nation of Nationland', user_id: user.id)
       nation.save
-      expect(nation.population).to(eq(10000))
+      expect(nation.population).to(eq(1500000))
     end
   end
 
@@ -47,7 +47,7 @@ describe Nation do
       response = create(:response, population_effect: -500)
       nation.edit_resources(response)
       nation.save
-      expect(nation.population).to(eq(4500))
+      expect(nation.population).to(eq(999500))
     end
   end
 end
