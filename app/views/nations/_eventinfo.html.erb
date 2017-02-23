@@ -2,11 +2,11 @@
   <h3 class="text-center"><%= @event.name %></h3>
 </div>
 
-<h3 class="text-center">Choose a Course of Action</h3>
+<h3 class="text-center action">Choose a Course of Action</h3>
 <hr>
 <div class="row">
   <% @event.responses.order("RANDOM()").each do |response| %>
-    <div class="col-sm-4">
+    <div class="col-sm-4 responses">
       <p><%= response.description %></p>
       <%= link_to 'Choose', edit_response_nation_path(response, @nation), remote: true, class: 'btn btn-default' %>
     </div>

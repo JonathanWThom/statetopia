@@ -16,6 +16,10 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ #nations .well {
+   width: 50%;
+ }
+
 .background-generic {
   background-image: url("map.jpg");
   background-repeat: no-repeat;
@@ -54,4 +58,29 @@
   background-size: cover;
   height: 100vh;
   margin-top: -20px;
+}
+
+.stats {
+  color: white;
+  letter-spacing: 1px;
+}
+
+.winstate {
+  color: #002087;
+  letter-spacing: 1px;
+}
+
+.jumbotron, .well {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.responses {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px white solid;
+  height: 260px;
+  padding-top: 5px;
+}
+
+.action {
+  color: #002087;
 }
