@@ -1,22 +1,32 @@
-<h1><%= @nation.name %></h1>
-<h3><%= @nation.government %></h3>
-<h3><%= @nation.economy %></h3>
-<h3><%= @nation.geography %></h3>
-
-<div class="stats">
-  <%= render "stats" %>
+<div class="row">
+  <div class="col-sm-8">
+    <div class="jumbotron">
+      <h1 class="text-center"><%= @nation.name %></h1>
+      <h4 class="text-center"><%= @nation.government %> | <%= @nation.economy %> | <%= @nation.geography %></h4>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="stats">
+      <%= render "stats" %>
+    </div>
+  </div>
 </div>
 
-<div class="winstate">
-  <%= render 'winstate' %>
+<div class="row">
+  <div class="winstate">
+    <%= render 'winstate' %>
+  </div>
 </div>
 
 <% if !@game_status %>
   <div id="event">
-    <%= link_to "Next Event", :event => true, :remote => true %>
+    <%= link_to "<button class='btn btn-default'>Next Event</button>".html_safe, :event => true, :remote => true %>
   </div>
 <% end %>
 
-<div class="event">
-
+<div class="row">
+  <div class="col-sm-8">
+    <div class="event">
+    </div>
+  </div>
 </div>

@@ -1,6 +1,9 @@
-<h3><%= @event.name %></h3>
+<div class="well">
+  <h3 class="text-center"><%= @event.name %></h3>
+</div>
 
-<h3>Choose a Course of Action</h3>
+<h3 class="text-center">Choose a Course of Action</h3>
+<hr>
 <div class="row">
   <% @event.responses.order("RANDOM()").each do |response| %>
     <div class="col-sm-4">
