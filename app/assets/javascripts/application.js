@@ -16,7 +16,7 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $('body').on("click", "#nations .pagination a", function(){
+  $('body').on("click", "#nations .continue .pagination a", function(){
     $.getScript(this.href);
     return false;
   });
