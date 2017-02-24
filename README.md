@@ -16,7 +16,7 @@
 
 ## Setup/Installation Requirements
 
-* _View on Heroku at [https://statetopia.herokuapp.com/](https://github.com/weitzwoman)_
+* _View on Heroku at [https://statetopia.herokuapp.com/](https://statetopia.herokuapp.com/)_
 
 * _In the Command Line, run:_
 ```
