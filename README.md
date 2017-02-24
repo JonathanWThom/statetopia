@@ -16,6 +16,8 @@
 
 ## Setup/Installation Requirements
 
+* _View on Heroku at [https://statetopia.herokuapp.com/](https://github.com/weitzwoman)_
+
 * _In the Command Line, run:_
 ```
 git clone https://github.com/weitzwoman/nation-game-rails
@@ -33,6 +35,9 @@ rails s
 ```
 localhost:3000
 ```
+## Known Bugs
+
+#### 1. On Heroku, Responses to events do not always load from database.
 
 ## Support and contact details
 
